@@ -1,0 +1,6 @@
+
+plugin.tx_formrelay.settings.dataProviders {
+    oneTrust {
+        enabled = {$plugin.tx_formrelay.settings.dataProviders.oneTrust.enabled}
+    }
+}

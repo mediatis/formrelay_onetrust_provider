@@ -1,0 +1,29 @@
+{
+  "name": "mediatis/formrelay-onetrust-provider",
+  "description": "FormRelay data provider for GDPR consent given via OneTrust",
+  "authors": [
+    {
+      "email": "info@mediatis.de",
+      "homepage": "http://www.mediatis.de",
+      "name": "TYPO3-TEAM",
+      "role": "Developer"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Mediatis\\FormrelayOnetrustProvider\\": "Classes"
+    }
+  },
+  "license": "GPL-2.0+",
+  "require": {
+    "typo3/cms-core": "^10.4||^11.5",
+    "mediatis/formrelay": "^5.0 || ^6.0",
+	"mediatis/one-trust-utility": "^2.0"
+  },
+  "type": "typo3-cms-extension",
+  "extra": {
+    "typo3/cms": {
+      "extension-key": "formrelay_onetrust_provider"
+    }
+  }
+}
