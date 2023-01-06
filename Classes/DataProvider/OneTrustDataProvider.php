@@ -9,7 +9,7 @@ use Mediatis\FormrelayOnetrustProvider\Service\CookieService;
 use Mediatis\OneTrustUtility\Service\ConsentManager;
 use Mediatis\OneTrustUtility\Service\ConsentManagerInterface;
 
-class OneTrustControlDataProvider extends DataProvider
+class OneTrustDataProvider extends DataProvider
 {
     const KEY_PERMISSION_FIELD_MAP = 'permissionFieldMap';
     const DEFAULT_PERMISSION_FIELD_MAP = [
@@ -30,8 +30,8 @@ class OneTrustControlDataProvider extends DataProvider
         $consentManager = new ConsentManager($cookieService);
 
         $permissionFieldMap = $this->getConfig(static::KEY_PERMISSION_FIELD_MAP);
-        foreach ($permissionMap as $permissionKey => $fieldName) {
-            $this->setField($submission, $fieldName, $consentManager->check($permissionKey) ? 1 : 0);
+        foreach ($permissionFieldMap as $permissionKey => $fieldName) {
+            $this->setField($submission, $fieldName, $consentManager->checkConsent($permissionKey) ? 1 : 0);
         }
     }
 
